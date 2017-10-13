@@ -4,6 +4,10 @@ public abstract class Fighter {
 	protected String name;
 	protected Integer hp;
 
+	public Fighter(){
+
+	}
+
 	public Fighter(String name, Integer hp) {
 		this.name = name;
 		this.hp = hp;

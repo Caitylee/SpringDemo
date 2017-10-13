@@ -12,6 +12,7 @@
       <configuration>
         <fileset id="fileset" name="App" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/app.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/app2.xml</file>
         </fileset>
       </configuration>
     </facet>

@@ -1,14 +1,37 @@
 package com.qfedu.spring1706;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+@Component //不清楚是哪个层
+/*
+@Controller //表示层
+@Service  //业务层
+@Repository //持久层
+*/
+
+//配置Spring的方法
+//1.XML
+//2.XML+Annotation
+//3.Code+Annotation
 public class Ultraman extends Fighter {
 	private Integer mp;
+	@Autowired //自动装配
 	private Weapon weapon;
-	
+
+	public Ultraman(){
+
+	}
+
+
 	public Ultraman(String name, Integer hp, Integer mp) {
 		super(name, hp);
 		this.mp = mp;
 	}
-	
+
 	public void setWeapon(Weapon weapon) {
 		this.weapon = weapon;
 	}
@@ -19,7 +42,11 @@ public class Ultraman extends Fighter {
 				weapon.getInjury() + weapon.getAddtionalInjury() :
 					CommonUtil.randomInt(15, 31);
 	}
-	
+
+	public Weapon getWeapon() {
+		return weapon;
+	}
+
 	public void hugeAttack(Fighter other) {
 		int expectedInjury = (int) (other.hp * 0.75);
 		int injury = expectedInjury > 50 ? expectedInjury : 50;
